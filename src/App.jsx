@@ -6,6 +6,7 @@ import gameOverMusic from './assets/gameover.mp3';
 import useSound from 'use-sound';
 import excitedImg from './assets/excited.gif';
 import Footer from './Footer';
+import drawImg from './assets/draw.png';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -92,6 +93,16 @@ const App = () => {
             <div>
               <img src={excitedImg} alt="Win Gif" />
             </div>          
+            <button className='text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-8' onClick={handleReset}>New Game</button>
+          </div>
+        }
+
+        {count === 9 && !win && 
+          <div>
+            <h3 className='mt-5 text-[30px]'>Match is Draw </h3>
+            <div>
+              <img className='w-[160px]' src={drawImg} alt="Draw img" />
+            </div> 
             <button className='text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-8' onClick={handleReset}>Reset Game</button>
           </div>
         }
